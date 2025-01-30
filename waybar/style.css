@@ -1,0 +1,128 @@
+@define-color main-bright #BE3144;  /*rgb(233, 147, 147);  */
+@define-color main-dark #09122C;  /*rgba(40, 31, 35, 0.95)*/
+@define-color text-color rgba(255, 255, 255, 0.95);  
+
+* {
+    font-weight: bold;
+}
+
+window#waybar {
+    font-family: FontAwesome, monospace;
+    background-color: transparent;
+    color: @text-color;  
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 1;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#workspaces button {
+    font-size: 14px;
+    box-shadow: none;
+    text-shadow: none;
+    font-weight: bold;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 0px;
+    color: rgba(255, 255, 255, 0.3);
+    background-color: transparent;  
+    animation: ws_normal 20s ease-in-out 1;
+}
+
+#workspaces button.active {
+    font-size: 20px;
+    background: @main-bright;  
+    color: @text-color;  
+    margin-left: 2px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-right: 2px;
+    animation: ws_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: @main-bright;  
+    color: #281f23;  
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#custom-ika,
+#custom-hardwarewrap {
+    margin: 3px 5px 3px 5px;
+    min-width: 35px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: @main-dark;  
+    color: @text-color;  
+}
+
+#custom-separator {
+    font-size: 30px;
+    min-width: 1px;
+    background-color: transparent;  
+    color: @main-bright;  
+}
+
+#tray {
+    margin: 4px 0px 0px 0px;
+}
+
+#battery,
+#network,
+#pulseaudio,
+#backlight {
+    margin: 5px 0px 0px 0px;
+    min-width: 25px;
+    border-radius: 5px;
+    background-color: rgba(233, 147, 147, 0.035);  
+    color: @main-bright;  
+}
+
+#custom-lock,
+#custom-power {
+    margin: 5px 0px 0px 0px;
+    min-width: 25px;
+    border-radius: 5px;
+    background-color: rgba(233, 147, 147, 0.035);  
+    color: @text-color;  
+}
+
+#clock,
+#custom-spotify,
+#custom-wayves {
+    margin: 3px 0px 3px 0px;
+    min-width: 35px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: @main-dark;  
+    color: @text-color;  
+}
+
+#memory,
+#custom-storage,
+#custom-nvidia_gpu,
+#custom-amd_gpu,
+#cpu {
+    margin: 8px 0px 8px 0px;
+    border-radius: 10px;
+    min-width: 35px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: @main-bright;  
+    color: #000000;  
+}
