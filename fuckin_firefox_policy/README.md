@@ -28,7 +28,7 @@ My solution uses a Flask server to host your custom HTML page locally, bypassing
 2. Add this to your Hyprland conf (adding whole path would be better):
    ```
    exec-once: python __init__.py
-3. Set your browser’s home page or new tab URL to ``http://localhost:5000.``
+3. Set your browser’s home page or new tab URL to ``http://localhost:5000.``. Don't forget to add this [extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/).
 
 ---
 
