@@ -34,6 +34,7 @@
         "pulseaudio",
         "pulseaudio#microphone",
         "battery",
+        "custom/colorpick",
         "custom/separator",
 
         "custom/padd",
@@ -118,15 +119,15 @@
         "format-alt-click": "click-right",
         "format-icons": {
             "wifi": [
-                "",
-                "",
-                ""
+                "󰈀",
+                "󰈀",
+                "󰈀"
             ],
             "ethernet": [
-                ""
+                "󰈀"
             ],
             "disconnected": [
-                ""
+                "󰈀"
             ]
         },
         "on-click": "kitty --hold nmtui",
@@ -238,6 +239,13 @@
         "interval" : 86400, 
         "tooltip": true
     },
+
+    "custom/colorpick":{
+        "format": "󰈊",
+        "on-click": "hyprpicker -a"
+
+  },  
+
 
 
 // LEFT MODULES

@@ -82,6 +82,7 @@ window#waybar.empty #window {
 
 #battery,
 #network,
+#custom-colorpick,
 #pulseaudio,
 #backlight {
     margin: 5px 0px 0px 0px;
