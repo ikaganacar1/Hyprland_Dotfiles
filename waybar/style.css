@@ -8,7 +8,7 @@
 
 window#waybar {
     font-family: FontAwesome, monospace;
-    background-color: transparent;
+    background-color: rgba(40, 40, 40, 0.5) ;
     color: @text-color;  
     transition-property: background-color;
     transition-duration: .5s;
@@ -19,7 +19,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty #window {
-    background-color: transparent;
+    background-color: @main-dark;
 }
 
 #workspaces button {
