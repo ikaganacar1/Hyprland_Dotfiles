@@ -70,15 +70,34 @@ window#waybar.empty #window {
     color: @text-color;  
 }
 
+#custom-hardwarewrap {
+  font-size:18px;
+  margin: 3px 2px 3px 2px;
+
+}
+
+#custom-power {
+  margin: 3px 5px 3px 5px;
+  font-size:18px; 
+  min-width: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  padding-right:13px;
+  background-color: @main-dark-transparent;  
+  color: @text-color;  
+}
+
+
 #custom-separator {
-    font-size: 30px;
-    min-width: 1px;
+    /*margin: 10px 0px 10px 0px;*/
+    font-size: 20px;
     background-color: transparent;  
-    color: @main-bright;  
+    color: @main-bright;
+    padding-bottom:5px;
 }
 
 #tray {
-    margin: 4px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 #battery,
@@ -86,21 +105,14 @@ window#waybar.empty #window {
 #custom-colorpick,
 #pulseaudio,
 #backlight {
-    margin: 5px 0px 0px 0px;
+    margin: 10px 0px 10px 0px;
     min-width: 25px;
     border-radius: 5px;
-    background-color: rgba(233, 147, 147, 0.035);  
+    padding-top:0px;
+    background-color: @main-dark-transparent;  
     color: @main-bright;  
 }
 
-#custom-lock,
-#custom-power {
-    margin: 5px 0px 0px 0px;
-    min-width: 25px;
-    border-radius: 5px;
-    background-color: rgba(233, 147, 147, 0.035);  
-    color: @text-color;  
-}
 
 #clock,
 #custom-spotify,
@@ -111,6 +123,10 @@ window#waybar.empty #window {
     padding: 10px;
     background-color: @main-dark-transparent;  
     color: @text-color;  
+}
+
+#custom-wayves {
+  font-size:10px;
 }
 
 #memory,
@@ -127,4 +143,14 @@ window#waybar.empty #window {
     padding-bottom: 0;
     background-color: @main-bright;  
     color: #000000;  
+}
+
+menu {
+	border-radius: 15px;
+	background: @main-dark;
+	color: @main-bright;
+  margin-top: 20px;
+}
+menuitem {
+	border-radius: 15px;
 }

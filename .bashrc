@@ -47,14 +47,16 @@ alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
 alias hash='f(){ echo -n "$1" | sha256sum | cut -d " " -f 1 | wl-copy && echo "SHA-256 hash copied to clipboard."; unset -f f; }; f'
 alias ram='sudo python ~/ram.py'
 #alias kill_='kill -9 **'
+alias dotfiles_to_repo='source ~/yzlm/dotfiles_to_repo.bash'
 
 alias nvim-find='nvim $(fzf --preview="bat --color=always {}")'
 alias bashrc='nvim ~/.bashrc'
+alias nv='nvim'
 
 alias c='clear'
-alias n='neofetch'
+alias n='fastfetch'
 alias q='exit'
 
 alias ls='eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions'
 alias lst='eza --tree --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias ll='eza --long --icons=always'
+alias ll='eza --long --all --icons=always'

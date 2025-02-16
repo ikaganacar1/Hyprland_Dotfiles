@@ -14,6 +14,7 @@
 //    |_|    \___/|____/___| |_| |___\___/|_| \_|
 
     "modules-left": [
+        "custom/padd",
         "clock",
         "custom/padd",
         "custom/wayves",
@@ -27,6 +28,10 @@
         "group/hardware",
 
         "custom/padd",
+        
+        "custom/separator",
+        "tray",    
+        "custom/separator",
 
         "custom/separator",
         "network",
@@ -37,17 +42,8 @@
         "custom/colorpick",
         "custom/separator",
 
-        "custom/padd",
-        
-        "custom/separator",
-        "tray",    
-        "custom/lock",
         "custom/power",
-        "custom/separator",
-
-        "custom/padd",
-
-        "custom/ika"
+        "custom/ika",
         
 
     ],
@@ -57,7 +53,6 @@
 //    | |\/| | | | | | | | | | | |   |  _| \___ \ 
 //    | |  | | |_| | |_| | |_| | |___| |___ ___) |
 //    |_|  |_|\___/|____/ \___/|_____|_____|____/ 
-    
 
 // MIDDLE
     "hyprland/workspaces": {
@@ -224,27 +219,27 @@
     },
 
     "custom/power": {
-        "format": "{}",
+        "format": "",
         "rotate": 0,
-        "on-click": "systemctl poweroff",
-        "interval" : 86400, 
-        "tooltip": true
+        //"on-click": "systemctl poweroff",
+        "interval" : 86400,
+
+        "menu":"on-click",
+        "menu-file":"~/.config/waybar/modules/power_menu.xml",
+        "menu-actions":{
+          "shutdown": "systemctl poweroff",
+          "reboot": "reboot",
+          "suspend": "systemctl suspend",
+          "lock": "hyprlock",
+        },
     },
 
-    
-    "custom/lock": {
-        "format": "{}",
-        "rotate": 0,
-        "on-click": "hyprlock",
-        "interval" : 86400, 
-        "tooltip": true
-    },
 
     "custom/colorpick":{
         "format": "󰈊",
         "on-click": "hyprpicker -a"
 
-  },  
+    },
 
 
 
@@ -285,7 +280,9 @@
    
     "custom/wayves": {
         "format": "{}",
-        "exec": "python ~/.config/wayves/wayves.py -p spotify -o cava -i cava -a cava "
+        "exec": "python ~/.config/wayves/wayves.py -p spotify  ",
+        "exec-if": "pgrep spotify",
+        "escape":true,
     },
 
 
@@ -300,7 +297,7 @@
         "format": " ika",
         "interval" : "once",
         "tooltip": false,
-        "on-click": "kitty --hold neofetch" 
+        "on-click": "kitty --hold fastfetch" 
     },
 
     "custom/separator": {
