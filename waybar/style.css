@@ -20,7 +20,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty #window {
-    background-color: @main-dark;
+    background-color: transparent;
 }
 
 #workspaces button {

@@ -109,14 +109,20 @@ form {
   padding-top: 0px;
   border: none;
   color: var(--background-color);
+  width: 100%;
 }
 
 form input {
+  width: 80%;
+  min-width: 150px; /* Prevents it from becoming too small */
+  max-width: 100%; /* Ensures it stays within the container */
   border: none;
   background-color: rgba(107, 102, 255, 0);
   color: #aaa;
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: 500;
+  padding: 0.5rem;
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
 }
 
 form input:focus {

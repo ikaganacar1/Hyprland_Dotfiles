@@ -21,8 +21,8 @@
         "custom/spotify"
     ],
     "modules-center": [
+        "hyprland/window",
         "hyprland/workspaces",
-        "hyprland/window"
     ],
     "modules-right": [
         "group/hardware",
@@ -74,9 +74,7 @@
     },
 
     "hyprland/window": {
-        "format": "{}",
         "max-length": 10,
-        "tooltip": true,
         "rewrite": {
             "(.*)": ""
         },
