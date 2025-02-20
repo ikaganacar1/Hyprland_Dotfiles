@@ -5,7 +5,7 @@ gifs_dir="$HOME/.config/backgrounds/gifs"
 
 backgrounds=$(find "$backgrounds_dir" -maxdepth 1 -type f -printf "%f\n")
 
-choice=$(echo -e "$backgrounds" | wofi -d -p "Select a wallpaper:")
+choice=$(echo -e "$backgrounds" | wofi -d -p "Select a wallpaper:" --show-images)
 
 if [[ -n "$choice" ]]; then
   file="$backgrounds_dir/$choice"

@@ -37,7 +37,7 @@
         "network",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone",
+        //"pulseaudio#microphone",
         "battery",
         "custom/colorpick",
         "custom/separator",

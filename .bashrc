@@ -17,6 +17,8 @@ bind 'TAB:menu-complete'
 
 PATH=/home/ika1/yzlm/mk_gif:$PATH
 
+(cat ~/.cache/wal/sequences &)
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 #__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
@@ -60,3 +62,5 @@ alias q='exit'
 alias ls='eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions'
 alias lst='eza --tree --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions'
 alias ll='eza --long --all --icons=always'
+
+alias fzf='fzf | wl-copy'
