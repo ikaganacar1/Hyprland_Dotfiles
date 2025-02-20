@@ -5,12 +5,13 @@
 ## I am using:
 * Arch Linux with Hypr ecosystem.
 * Waybar with Wayves. (cava integration to waybar)
-* Swwww for .gif backgrounds. 
+* Swww for .gif backgrounds. 
 * Sddm with Keyitdev/sddm-astronaut-theme.
 * Custom Main/New page for browser.
 * Wofi for browse apps and wallpapers.
+* Pywal for changing colors.
 * Kitty terminal with Starship.
 * LazyVim as ide. yep as ide.
 
-## 📂 Installation  
+## Installation  
 Good Luck :)
