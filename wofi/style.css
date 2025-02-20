@@ -70,3 +70,8 @@ window {
 #entry:drop(active) {
   background-color: #C6BDC7!important;
 }
+#img {
+  margin: 2px;
+  padding-left: 4px;
+  border-radius: 4px;
+}
