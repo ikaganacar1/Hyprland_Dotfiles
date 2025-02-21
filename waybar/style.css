@@ -71,6 +71,7 @@ window#waybar.empty #window {
     padding: 10px;
     background-color: @main-dark;  
     color: @text-color;  
+    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
 }
 
 #custom-hardwarewrap {
@@ -88,6 +89,7 @@ window#waybar.empty #window {
   padding-right:13px;
   background-color: @main-dark;  
   color: @text-color;  
+  box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
 }
 
 
@@ -127,14 +129,26 @@ window#waybar.empty #window {
 
 
 #clock,
-#custom-spotify,
-#custom-wayves {
-    margin: 3px 0px 3px 0px;
+#custom-spotify{
+    margin: 3px 3px 3px 3px;
     min-width: 35px;
     border-radius: 5px;
     padding: 10px;
     background-color: @main-dark;  
     color: @text-color;  
+    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
+}
+
+#custom-wayves {
+    margin: 3px 3px 3px 3px;
+    border-radius: 5px;
+    background-color: @main-dark;  
+    color: @text-color; 
+    
+    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
+    
+    padding: 10px;
+    font-weight: bold;
 }
 
 #custom-wayves {
