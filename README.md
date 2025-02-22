@@ -11,7 +11,7 @@
 * Wofi for browse apps and wallpapers.
 * Pywal for changing colors.
 * Kitty terminal with Starship.
-* LazyVim as ide. yep as ide.
+* Neovim with pywal colors.
 
 ## Installation  
 Good Luck :)
