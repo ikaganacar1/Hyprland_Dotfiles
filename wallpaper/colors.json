@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ika1/.config/backgrounds/gifs/zaun.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0b0d0d",
+        "foreground": "#a8c3ca",
+        "cursor": "#a8c3ca"
+    },
+    "colors": {
+        "color0": "#0b0d0d",
+        "color1": "#354E51",
+        "color2": "#4A5547",
+        "color3": "#5E6B5C",
+        "color4": "#758972",
+        "color5": "#969774",
+        "color6": "#5B7180",
+        "color7": "#a8c3ca",
+        "color8": "#75888d",
+        "color9": "#354E51",
+        "color10": "#4A5547",
+        "color11": "#5E6B5C",
+        "color12": "#758972",
+        "color13": "#969774",
+        "color14": "#5B7180",
+        "color15": "#a8c3ca"
+    }
+}

@@ -39,6 +39,8 @@ change_colors() {
   wal -i ~/.config/backgrounds/gifs/"$WALLPAPER_NAME.png"
 
   SCHEME_FILE="$HOME/.cache/wal/schemes/_home_ika1__config_backgrounds_gifs_${WALLPAPER_NAME}_png_dark_None_None_1.1.0.json"
+  cp $SCHEME_FILE ~/.config/wallpaper/colors.json
+  python .config/wallpaper/edit_starship.py
 
   if [[ -f "$SCHEME_FILE" ]]; then
     BACKGROUND=$(jq -r '.special.background' "$SCHEME_FILE")

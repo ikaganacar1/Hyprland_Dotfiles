@@ -170,7 +170,7 @@
     "group/hardware": {
         "orientation": "horizontal",
         "drawer": {
-            "transition-duration": 500,
+            "transition-duration": 300,
             "transition-left-to-right": false
         },
         "modules": [
