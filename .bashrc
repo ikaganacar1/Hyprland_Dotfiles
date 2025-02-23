@@ -15,7 +15,7 @@ eval "$(fzf --bash)"
 
 bind 'TAB:menu-complete'
 
-PATH=/home/ika1/yzlm/mk_gif:$PATH
+PATH=/home/ika1/yzlm/Hyprland_Dotfiles/scripts/:$PATH
 
 (cat ~/.cache/wal/sequences &)
 
