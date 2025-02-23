@@ -23,7 +23,9 @@
 
 ## Installation  
 ### Dotfiles:
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ikaganacar1/Hyprland_Dotfiles/refs/heads/main/scripts/install.sh)"` <br>
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ikaganacar1/Hyprland_Dotfiles/refs/heads/main/scripts/install.sh)
+```
 You just need to copy this to your terminal. Note that this installation script is only work with arch's pacman. <br>
 
 ### Custom New/Home page for Firefox:
@@ -34,6 +36,8 @@ Good Luck :)
 
 ## Notes
 * I couldn't give my gif wallpapers with this repo because of the size issues. You can download mp4 wallpapers from [here](https://motionbgs.com/) and run the `mp4togif.bash` for automated installation.<br>
-`source scripts/mp4togif.bash /path/to/mp4/wallpaper [name] [framerate default=15]`<br>
+```bash
+source scripts/mp4togif.bash /path/to/mp4/wallpaper [name] [framerate default=15]
+```
 If you already have a .gif file put it inside of the backgrounds/ folder and put a frame in background/gifs folder.
 * Feel free to contribute :)
