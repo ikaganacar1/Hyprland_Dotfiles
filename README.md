@@ -1,12 +1,15 @@
 # ikaganacar's Hyprland Dotfiles
 
+https://github.com/user-attachments/assets/eefcf584-5f81-4062-9d7a-682fbc946ed8
+
+![Youtube](https://youtu.be/0HbfCxHbAII)
+
 <details>
 <summary><h2>🖼️ Screenshots<h2/></summary>
 
 ![image](https://github.com/user-attachments/assets/d6706f5d-4eb8-44ee-ad76-f125866ef1e4)<br>
 ![image](https://github.com/user-attachments/assets/8b5d6c40-e943-4805-923e-11451710a5e4)<br>
 ![image](https://github.com/user-attachments/assets/2480e981-7223-4736-a137-38436249cd85)<br>
-
 
 </details>
 
@@ -41,3 +44,4 @@ source scripts/mp4togif.bash /path/to/mp4/wallpaper [name] [framerate default=15
 ```
 If you already have a .gif file put it inside of the backgrounds/ folder and put a frame in background/gifs folder.
 * Feel free to contribute :)
+* Important limitation: Swww loads gif images very slow so -as a little cheat- i load a frame of the gif first.
