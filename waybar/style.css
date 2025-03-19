@@ -8,6 +8,7 @@
 
 * {
     font-weight: bold;
+    min-height: 0;
 }
 
 window#waybar {
@@ -16,6 +17,9 @@ window#waybar {
     color: @text-color;  
     transition-property: background-color;
     transition-duration: .5s;
+    padding: 0;
+    margin: 0;
+    min-height: 0px; 
 }
 
 window#waybar.hidden {
@@ -68,7 +72,7 @@ window#waybar.empty #window {
     margin: 3px 5px 3px 5px;  
     min-width: 35px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     background-color: @main-dark;  
     color: @text-color;  
     box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
@@ -113,7 +117,7 @@ window#waybar.empty #window {
     min-width: 25px;
     border-radius: 5px;
     padding-top:0px;
-    background-color: @main-dark;  
+    /*background-color: @main-dark;*/  
     color: @text-color;  
 }
 
@@ -123,7 +127,7 @@ window#waybar.empty #window {
     border-radius: 5px;
     padding-top:0px;
     padding-right:7px;
-    background-color: @main-dark;  
+    /*background-color: @main-dark;*/  
     color: @text-color;  
 }
 
@@ -133,7 +137,8 @@ window#waybar.empty #window {
     margin: 3px 3px 3px 3px;
     min-width: 35px;
     border-radius: 5px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: @main-dark;  
     color: @text-color;  
     box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
@@ -159,6 +164,7 @@ window#waybar.empty #window {
 #custom-storage,
 #custom-nvidia_gpu,
 #custom-amd_gpu,
+#temperature,
 #cpu {
     margin: 8px 0px 8px 0px;
     border-radius: 10px;

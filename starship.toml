@@ -28,14 +28,14 @@ palette = 'ika'
 [palettes.ika]
 red = "#f38ba8"
 green = "#a6e3a1"
-os_bg = "#626993"
-username_bg = "#626993"
-directory_bg = "#8D8D8D"
-git_bg = "#AEAEAE"
-language_bg = "#9b9c9c"
-end = "#8D8D8D"
-base = "#dedfdf"
-text = "#dedfdf"
+os_bg = "#354E51"
+username_bg = "#354E51"
+directory_bg = "#5E6B5C"
+git_bg = "#969774"
+language_bg = "#75888d"
+end = "#5E6B5C"
+base = "#a8c3ca"
+text = "#a8c3ca"
 
 
 [os]

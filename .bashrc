@@ -15,23 +15,21 @@ eval "$(fzf --bash)"
 
 bind 'TAB:menu-complete'
 
-PATH=/home/ika1/yzlm/Hyprland_Dotfiles/scripts/:$PATH
-
 (cat ~/.cache/wal/sequences &)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
-#if [ $? -eq 0 ]; then
-#  eval "$__conda_setup"
-#else
-#  if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-#    . "/opt/miniconda3/etc/profile.d/conda.sh"
-#  else
-#    export PATH="/opt/miniconda3/bin:$PATH"
-#  fi
-#fi
-#unset __conda_setup
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "/opt/miniconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/opt/miniconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
 #    _    _     ___    _    ____
@@ -63,4 +61,8 @@ alias ls='eza --color=always --long --no-filesize --icons=always --no-time --no-
 alias lst='eza --tree --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions'
 alias ll='eza --long --all --icons=always'
 
-alias fzf='fzf | wl-copy'
+alias fzfc='fzf | wl-copy'
+alias fkill='kill -9 $(ps aux | fzf | awk "{print $2}")'
+alias search='f(){ nohup flatpak run app.zen_browser.zen --search $1 & exit; unset -f f; }; f'
+
+export PATH=$PATH:/home/ika1/.spicetify
