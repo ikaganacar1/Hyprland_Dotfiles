@@ -1,0 +1,159 @@
+{
+  "layer": "bottom",
+  "position": "right",
+  "width": 65, 
+  "height": 500,
+  "exclusive": false,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "margin-top": 10,
+  "margin-bottom": 10,
+  "margin-right": 5,
+  
+  "modules-left": [],
+  
+  "modules-center": [
+    "battery",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "temperature",
+    "custom/storage",
+    
+    "custom/padd",    
+    
+    "custom/nvidia_gpu",
+    "custom/amd_gpu",
+    "cpu",
+    "memory",
+    
+    "custom/padd",    
+    
+    "custom/download_speed",
+    "custom/upload_speed"
+   
+  ],
+ 
+  "modules-right": [],
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} %{capacity}",
+    "rotate": 0,
+    "format-charging": " %{capacity}",
+    "format-plugged": " %{capacity}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  %{volume}",
+    "rotate": 0,
+    "format-muted": "",
+    "on-click": "pavucontrol -t 3",
+
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+
+
+  "backlight": {
+    "device": "intel_backlight",
+    "rotate": 0,
+    "format": "{icon} %{percent}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "tooltip-format": "Brightness: {percent}%"
+  },
+
+  "network": {
+    "format": "{icon}  %{signalStrength}",
+    "format-alt": "{icon} {ipaddr}",
+    "format-icons": {
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": ["󰈀"],
+      "disconnected": ["󰤮"]
+    },
+    "on-click": "kitty --hold nmtui",
+    "tooltip-format": "Network: {essid} - {signalStrength}%"
+  },
+
+
+  "custom/storage": {
+    "format": " {}b",
+    "return-type": "json",
+    "interval": 60,
+    "exec": "~/.config/waybar/modules/storage.sh",
+    "tooltip-format": "Storage Usage"
+  },
+
+  "memory": {
+    "interval": 10,
+    "format": "RAM {used:0.1f}Gb",
+    "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB ({percentage}%)"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": " CPU {usage}% ",
+    "tooltip-format": "CPU Usage: {usage}%"
+  },
+
+  "temperature": {
+    "interval": 5,
+    "format": " {temperatureC}°C",
+    "tooltip-format": "CPU Temperature: {temperatureC}°C"
+  },
+
+  "custom/amd_gpu": {
+    "exec": "cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent 2>/dev/null || echo '0'",
+    "format": " lil-GPU {}%",
+    "return-type": "",
+    "interval": 2,
+    "tooltip-format": "AMD GPU Usage"
+  },
+
+  "custom/nvidia_gpu": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || echo '0'", 
+    "format": " the-GPU {}%",
+    "return-type": "",
+    "interval": 2,
+    "tooltip-format": "NVIDIA GPU Usage"
+  },
+
+  "custom/upload_speed": {
+    "exec": "/home/ika1/.config/waybar/modules/upload.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip-format": "{}",
+    "on-click": "nmtui"
+  },
+ 
+  "custom/download_speed": {
+    "exec": "/home/ika1/.config/waybar/modules/download.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip-format": "{}",
+    "on-click": "nmtui"
+  },
+
+  "custom/padd": {
+    "format": "  ",
+    "interval" : "once",
+    "tooltip": false
+  },
+}

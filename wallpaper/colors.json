@@ -1,27 +1,27 @@
 {
-    "wallpaper": "/home/ika1/.config/backgrounds/gifs/zaun.png",
+    "wallpaper": "/home/ika1/.config/backgrounds/gifs/NightCity.png",
     "alpha": "100",
     "special": {
-        "background": "#0b0d0d",
-        "foreground": "#a8c3ca",
-        "cursor": "#a8c3ca"
+        "background": "#090305",
+        "foreground": "#bfccde",
+        "cursor": "#bfccde"
     },
     "colors": {
-        "color0": "#0b0d0d",
-        "color1": "#354E51",
-        "color2": "#4A5547",
-        "color3": "#5E6B5C",
-        "color4": "#758972",
-        "color5": "#969774",
-        "color6": "#5B7180",
-        "color7": "#a8c3ca",
-        "color8": "#75888d",
-        "color9": "#354E51",
-        "color10": "#4A5547",
-        "color11": "#5E6B5C",
-        "color12": "#758972",
-        "color13": "#969774",
-        "color14": "#5B7180",
-        "color15": "#a8c3ca"
+        "color0": "#090305",
+        "color1": "#A3443D",
+        "color2": "#335B89",
+        "color3": "#4E729E",
+        "color4": "#5C74CD",
+        "color5": "#6A8AB5",
+        "color6": "#7B9AC3",
+        "color7": "#bfccde",
+        "color8": "#858e9b",
+        "color9": "#A3443D",
+        "color10": "#335B89",
+        "color11": "#4E729E",
+        "color12": "#5C74CD",
+        "color13": "#6A8AB5",
+        "color14": "#7B9AC3",
+        "color15": "#bfccde"
     }
 }

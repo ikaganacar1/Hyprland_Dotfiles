@@ -42,7 +42,7 @@ alias grep='grep --color=auto'
 
 alias conf-hypr='nvim /home/ika1/.config/hypr/'
 alias conf-waybar='nvim /home/ika1/.config/waybar/'
-alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
+alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar && hyprctl dispatch exec "waybar -c ~/.config/waybar/config-hardware.jsonc  -s ~/.config/waybar/config-hardware.css"'
 
 alias hash='f(){ echo -n "$1" | sha256sum | cut -d " " -f 1 | wl-copy && echo "SHA-256 hash copied to clipboard."; unset -f f; }; f'
 alias ram='sudo python ~/ram.py'
@@ -64,5 +64,9 @@ alias ll='eza --long --all --icons=always'
 alias fzfc='fzf | wl-copy'
 alias fkill='kill -9 $(ps aux | fzf | awk "{print $2}")'
 alias search='f(){ nohup flatpak run app.zen_browser.zen --search $1 & exit; unset -f f; }; f'
+alias gpu='watch -n 1 nvidia-smi'
 
-export PATH=$PATH:/home/ika1/.spicetify
+#ros-start() {
+#  sudo docker run -it --privileged --net=host --device /dev/dri --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" osrf/ros:melodic-desktop-full \
+#  #docker run -it --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v /home/$(whoami)/ros:/ros --device /dev/video0 --device /dev/dri osrf/ros:kinetic-desktop-full bash -c "cp /ros/.bashrc /root/.bashrc && bash"
+#}

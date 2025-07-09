@@ -58,16 +58,10 @@ change_colors() {
         echo "@define-color color$i ${COLORS[i]};"
       done
 
-      #Apariently waybar uses gtk3 css. this is not working
-      #echo ":root {"
-      #echo "  --main-dark: $BACKGROUND;"
-      #echo "  --main-bright: $FOREGROUND;"
-      #for i in {0..15}; do
-      #  echo "  --color$i: ${COLORS[i]};"
-      #done
-      #echo "}"
-
     } >~/.config/waybar/colors_pywal.css
+    
+    cp ~/.config/waybar/colors_pywal.css ~/.config/fuckin_firefox_policy/static/colors_pywal.css
+
   else
     echo "Error: Color scheme file not found!" >&2
   fi

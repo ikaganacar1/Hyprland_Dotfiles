@@ -1,9 +1,11 @@
-@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro);
-@import url(https://www.nerdfonts.com/assets/css/webfont.css);
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro");
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+@import url("/static/colors_web.css"); /* ← browser-friendly pywal colors */
+
 :root {
-  --background-color: #e70000;
-  --link-hover: hsla(0, 90%, 68%, 1);
-  --link-heading: hsla(0, 90%, 68%, 1);
+  --background-color: var(--color2);
+  --link-hover: var(--color2);
+  --link-heading: var(--color2);
 }
 
 * {
@@ -19,12 +21,22 @@ html, body {
 }
 
 body {
-  background-color: rgb(36, 36, 36);
+  background-color: var(--main-dark);
   font-family: "Source Code Pro", monospace;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/*
+.arch-art {
+  color: var(--link-heading);
+  font-size: 25px;
+  line-height: 1.2;
+  margin: 0 auto;
+  padding: 30px 125px;
+  letter-spacing: 1;
+  white-space: pre;
+}*/
 
 .wrapper {
   display: flex;
@@ -88,12 +100,12 @@ li::marker {
 }
 
 li {
-  justify-content:center;
+  justify-content: center;
 }
 
 a:hover {
   color: var(--link-hover);
-  transform: scale(1.1); /* Slightly scale on hover */
+  transform: scale(1.1);
   font-weight: 500;
 }
 
@@ -114,15 +126,15 @@ form {
 
 form input {
   width: 80%;
-  min-width: 150px; /* Prevents it from becoming too small */
-  max-width: 100%; /* Ensures it stays within the container */
+  min-width: 150px;
+  max-width: 100%;
   border: none;
   background-color: rgba(107, 102, 255, 0);
   color: #aaa;
   font-size: 1.5rem;
   font-weight: 500;
   padding: 0.5rem;
-  box-sizing: border-box; /* Ensures padding doesn't overflow */
+  box-sizing: border-box;
 }
 
 form input:focus {
@@ -140,38 +152,15 @@ form input:focus {
   position: fixed;
   width: 1200px;
   margin-left: -5rem;
-  background-color: hsla(0, 100%, 50%, 1);
-  background-image: radial-gradient(
-      at 40% 0%,
-      hsla(0, 90%, 50%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 0%,
-      hsla(10, 90%, 50%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 50%,
-      hsla(350, 90%, 40%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 50%,
-      hsla(5, 90%, 50%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 100%,
-      hsla(340, 90%, 50%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 50%,
-      hsla(0, 90%, 40%, 1) 0px,
-      transparent 50%
-    );
-  box-shadow: 0px 0px 30px hsla(0, 100%, 50%, 1);
+  background-color: var(--main-bright);
+  background-image:
+    radial-gradient(at 40% 0%, var(--main-bright) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, var(--main-bright) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, var(--main-bright) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, var(--main-bright) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, var(--main-bright) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, var(--main-bright) 0px, transparent 50%);
+  box-shadow: 0px 0px 30px var(--main-bright);
 }
 
 /* Media Queries */

@@ -5,13 +5,20 @@
 @define-color main-dark alpha(@color2, 0.8);
 @define-color text-color @color15;
 
+@keyframes neon_pulse {
+    to { box-shadow: 0 0 6px @color13, 0 0 12px @color13; }
+}
+
+@keyframes data_glow {
+    to { text-shadow: 0 0 6px @main-bright, 0 0 10px @main-bright; }
+}
 
 * {
     font-weight: bold;
     min-height: 0;
 }
 
-window#waybar {
+/*window#waybar {
     font-family: FontAwesome, monospace;
     background-color: alpha(@color0, 0.3) ;
     color: @text-color;  
@@ -19,11 +26,23 @@ window#waybar {
     transition-duration: .5s;
     padding: 0;
     margin: 0;
-    min-height: 0px; 
+    min-height: 10px; 
+}*/
+
+window#waybar {
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    background-color: transparent;
+
+    border: 1px solid alpha(@main-dark, 0.8);
+    border-radius: 20px;
+    color: @text-color;
+    padding: 10px 10px;
+    margin: 2px;
+
 }
 
 window#waybar.hidden {
-    opacity: 1;
+    opacity: 0;
 }
 
 window#waybar.empty #window {
@@ -36,12 +55,12 @@ window#waybar.empty #window {
     text-shadow: none;
     font-weight: bold;
     padding: 0px;
-    border-radius: 5px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    border-radius: 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     margin-left: 0px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin-right: 0px;
     color: alpha(@text-color,0.3);
     background-color: transparent;  
@@ -49,7 +68,7 @@ window#waybar.empty #window {
 }
 
 #workspaces button.active {
-    font-size: 20px;
+    font-size: 16px;
     background: @main-bright;  
     color: @text-color;  
     margin-left: 2px;
@@ -57,14 +76,23 @@ window#waybar.empty #window {
     padding-right: 11px;
     margin-right: 2px;
     animation: ws_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    /*transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);*/
 }
 
 #workspaces button:hover {
-    background: @main-bright;  
-    color: #281f23;  
+    font-size: 16px;
+    background: @main-bright;
+    color: #281f23;
+    padding-left: 11px;
+    padding-right: 11px;
     animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    /*transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);*/  
+    
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px alpha(@color13, 0.6),
+                inset 0 0 8px alpha(@color13, 0.2);
+    text-shadow: 0 0 8px @main-bright;
+    animation: data_glow 1.5s infinite alternate;
 }
 
 #custom-ika,
@@ -73,33 +101,27 @@ window#waybar.empty #window {
     min-width: 35px;
     border-radius: 5px;
     padding: 5px;
-    background-color: @main-dark;  
-    color: @text-color;  
-    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
+    background-color: alpha(@main-dark, 0.2);
+    /*color: @text-color;  
+    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;*/
 }
 
-#custom-hardwarewrap {
-  font-size:18px;
-  margin: 3px 2px 3px 2px;
 
-}
 
 #custom-power {
   margin: 3px 5px 3px 5px;
-  font-size:18px; 
+  font-size:16px; 
   min-width: 20px;
   border-radius: 10px;
   padding: 10px;
   padding-right:13px;
-  background-color: @main-dark;  
-  color: @text-color;  
-  box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
+  background-color: alpha(@main-dark, 0.2);
 }
 
 
 #custom-separator {
     /*margin: 10px 0px 10px 0px;*/
-    font-size: 20px;
+    font-size: 15px;
     background-color: transparent;  
     color: @main-bright;
     padding-bottom:5px;
@@ -109,73 +131,26 @@ window#waybar.empty #window {
     margin: 0px 0px 0px 0px;
 }
 
-#battery,
-#network,
-#custom-colorpick,
-#backlight {
-    margin: 10px 0px 10px 0px;
-    min-width: 25px;
-    border-radius: 5px;
-    padding-top:0px;
-    /*background-color: @main-dark;*/  
-    color: @text-color;  
-}
-
-#pulseaudio {
-    margin: 10px 0px 10px 0px;
-    min-width: 25px;
-    border-radius: 5px;
-    padding-top:0px;
-    padding-right:7px;
-    /*background-color: @main-dark;*/  
-    color: @text-color;  
-}
-
-
 #clock,
 #custom-spotify{
-    margin: 3px 3px 3px 3px;
-    min-width: 35px;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: @main-dark;  
-    color: @text-color;  
-    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
+  margin: 3px 3px 3px 3px;
+  min-width: 35px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: alpha(@main-dark, 0.2);
 }
 
 #custom-wayves {
-    margin: 3px 3px 3px 3px;
-    border-radius: 5px;
-    background-color: @main-dark;  
-    color: @text-color; 
-    
-    box-shadow: 0 0 2px @color15, 0 0 2px @color13, 0 0 2px @color11;
-    
-    padding: 10px;
-    font-weight: bold;
-}
+  margin: 3px 3px 3px 3px;
+  border-radius: 5px;
+  background-color: alpha(@main-dark, 0.2);
 
-#custom-wayves {
+  padding: 10px;
+  font-weight: bold;
   font-size:10px;
 }
 
-#memory,
-#custom-storage,
-#custom-nvidia_gpu,
-#custom-amd_gpu,
-#temperature,
-#cpu {
-    margin: 8px 0px 8px 0px;
-    border-radius: 10px;
-    min-width: 35px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: @main-bright;  
-    color: shade(@main-dark, 0.4);  
-}
 
 menu {
 	border-radius: 15px;
@@ -185,4 +160,15 @@ menu {
 }
 menuitem {
 	border-radius: 15px;
+}
+
+#custom-wayves:hover,
+#clock:hover,
+#custom-ika:hover,
+#custom-power:hover {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px alpha(@color13, 0.6),
+                inset 0 0 8px alpha(@color13, 0.2);
+    text-shadow: 0 0 8px @main-bright;
+    animation: data_glow 1.5s infinite alternate;
 }

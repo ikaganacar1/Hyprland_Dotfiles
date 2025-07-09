@@ -33,3 +33,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = set_transparency,
 })
+vim.keymap.set("n", "<leader>e", function()
+  require("neo-tree.command").execute({
+    toggle = true,
+    dir = vim.fn.getcwd(), -- Force use of current working directory
+  })
+end, { desc = "Toggle Neotree in CWD" })

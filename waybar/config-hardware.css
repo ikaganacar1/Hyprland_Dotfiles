@@ -1,0 +1,99 @@
+@import 'colors_pywal.css';
+@define-color main-bright @color13;
+@define-color main-dark alpha(@color2, 0.8);
+@define-color text-color @color15;
+
+* {
+    font-weight: bold;
+    min-height: 0;
+}
+
+@keyframes neon_pulse {
+    to { box-shadow: 0 0 6px @color13, 0 0 12px @color13; }
+}
+
+@keyframes data_glow {
+    to { text-shadow: 0 0 6px @main-bright, 0 0 10px @main-bright; }
+}
+
+window#waybar {
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    background-color: transparent;
+
+    border: 1px solid alpha(@color13, 0.2);
+    border-radius: 20px;
+    color: @text-color;
+    padding: 10px 10px;
+    margin: 2px;
+    font-size: 11px;
+
+}
+
+#battery,
+#pulseaudio,
+#backlight,
+#network,
+#custom-storage,
+#memory,
+#cpu,
+#temperature,
+#custom-amd_gpu,
+#custom-nvidia_gpu,
+#custom-download_speed,
+#custom-upload_speed {
+    background-color: alpha(@main-dark, 0.5);
+    /*border: 1px solid alpha(@text-color, 0.99);*/
+    border-radius: 10px;
+    margin: 3px 0;
+    padding: 6px 0;
+    min-height: 20px;
+    font-size: 11px;
+    /*box-shadow: 0 0 5px alpha(@color13, 0.2),
+                inset 0 0 3px alpha(@color13, 0.1);
+    text-shadow: 0 0 2px alpha(@main-bright, 0.8);*/
+    transition: all 0.3s ease;
+}
+
+#battery:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#custom-storage:hover,
+#memory:hover,
+#cpu:hover,
+#temperature:hover,
+#custom-amd_gpu:hover,
+#custom-nvidia_gpu:hover,
+#custom-download_speed:hover,
+#custom-upload_speed:hover {
+    background-color: alpha(@color0, 0.7);
+    box-shadow: 0 0 10px alpha(@color13, 0.6),
+                inset 0 0 8px alpha(@color13, 0.2);
+    text-shadow: 0 0 8px @main-bright;
+    animation: data_glow 1.5s infinite alternate;
+}
+
+#battery.warning,
+#cpu.warning,
+#memory.warning {
+    animation: neon_pulse 1.2s infinite alternate;
+    background: radial-gradient(ellipse at center, 
+                alpha(@color3, 0.5) 0%, 
+                alpha(@color3, 0.3) 100%);
+}
+
+#battery.critical,
+#temperature.critical {
+    animation: neon_pulse 0.8s infinite alternate;
+    background: radial-gradient(ellipse at center, 
+                alpha(@color1, 0.6) 0%, 
+                alpha(@color1, 0.4) 100%);
+}
+
+#network.disconnected {
+    background: radial-gradient(ellipse at center, 
+                alpha(@color1, 0.4) 0%, 
+                alpha(@color1, 0.2) 100%);
+}
+
+

@@ -7,16 +7,156 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&amp;display=swap" rel="stylesheet"/>
     <title>Startpage</title>
+    <style>
+    /* Enhanced Arch Linux text art with animations */
+    .arch-container {
+      perspective: 1000px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .arch-art {
+      color: var(--link-heading);
+      animation: float 15s ease infinite;
+
+      font-size: 25px;
+      line-height: 1.2;
+      margin: 0 auto;
+      padding: 30px 125px;
+      letter-spacing: 1;
+      white-space: pre;
+      position: relative;
+      transition: all 0.5s ease;
+      transform-style: preserve-3d;
+      text-shadow: 
+        0 0 5px var(--main-bright), 
+        0 0 10px var(--main-dark);
+      border-radius: 10px;
+      box-shadow: 
+        inset 0 0 15px rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .arch-art::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(
+        45deg,
+        var(--color1),
+        var(--color2),
+        var(--color3),
+        var(--color4),
+        var(--color5),
+        var(--color6),
+        var(--color7),
+        var(--color8),
+        var(--color9),
+        var(--color10),
+        var(--color11),
+        var(--color12),
+        var(--color13),
+        var(--color14),
+        var(--color15),
+        var(--color1)
+      );
+      background-size: 200% 200%;
+      z-index: -1;
+      border-radius: 50px;
+      animation: gradientFlow 15s ease infinite;
+      filter: blur(20px);
+      opacity: 0.2;
+    }
+
+    .arch-art::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      );
+      z-index: -1;
+      border-radius: 10px;
+    }
+
+    .arch-art:hover {
+      text-shadow: 
+        0 0 10px var(--main-bright),
+        0 0 20px rgba(255, 255, 255, 0.5);
+
+    }
+
+    .arch-art span {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .arch-art:hover span {
+      transform: translateY(-3px);
+      text-shadow: 0 0 15px var(--main-bright);
+    }
+
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+
+    @keyframes float {
+      0% { transform: translateY(10px) translateX(10px); }
+      50% { transform: translateY(20px) translateX(20px); }
+      100% { transform: translateY(10px) translateX(10px); }
+    }
+
+
+  </style>
+
 
   </head>
 
   <body>
+
+
     <div class="wrapper">
       <div class="bg"></div>
       <div class="maincard">
         <div class="content">
           <div class="image">
-            <img src="{{ url_for('static', filename='images/gif.gif')}}" alt="No image"/>
+
+            <div class="arch-container">
+              <pre class="arch-art">
+                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++ooooooooooooo/`
+         ./ooosssso++osssssso+`
+        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`
+              </pre>
+            </div>
+  
           </div>
           <div id="links" class="links">
             <section>
@@ -45,9 +185,14 @@
                 <li>
                   <a href="https://www.nerdfonts.com/cheat-sheet">󰞅 Nerdfonts</a>
                 </li>
+                
+                <li>
+                  <a href="https://www.kaggle.com/"> Kaggle</a>
+                </li>
 
               </ul>
             </section>
+            
 
             <section>
               <h3>AI 󱙺</h3>
